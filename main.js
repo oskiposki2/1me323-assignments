@@ -1,5 +1,5 @@
-import { assignments } from "/assignments.js";
-import { createNavigation } from "/nav.js";
+import { assignments } from "./assignments.js";
+import { createNavigation } from "./nav.js";
 
 const nav = document.getElementById("main-nav");
 const cards = document.getElementById("card-container");
