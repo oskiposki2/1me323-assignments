@@ -40,7 +40,7 @@ const products = [
         name: "Lumetra D50",
         description: "En DSLR systemkamera från Lumetra, sista DSLR:en från Lumetra. En rejäl pjäs för garanterat lång livstid",
         price: 12900,
-        image: "img/LumetraD50",
+        image: "img/LumetraD50.jpg",
         category: "DSLR"
     },
 
@@ -73,3 +73,19 @@ const products = [
 
 
 ]
+
+const productcards = document.getElementById("productcards");
+
+let productCardsHTML = "";
+
+products.forEach(productcard => {
+    productCardsHTML +=
+    `
+    <div class="procards">
+    <h3>${productcard.name}</h3>
+    <img src="${productcard.image}" alt="">
+    </div>
+    `
+})
+
+productcards.innerHTML = productCardsHTML;
