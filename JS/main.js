@@ -19,6 +19,4 @@ assignments.forEach(assignmentcard => {
 
 })
 
-cards.innerHTML = cardsHTML;
-
-console.log(productcards)
+cards.innerHTML = cardsHTML
