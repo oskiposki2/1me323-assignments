@@ -10,6 +10,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    flex: 1;
 }
 
 .procards {
@@ -47,4 +48,23 @@ button {
 button:hover {
     color: green;
     border: none;
+}
+
+#basket {
+    flex: 0 0 250px;
+    margin-left: 5%;
+    position: sticky;
+    align-self: flex-start;
+    top: 20px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    min-height: 500px;
+}
+
+#basketItem {
+    padding: 10px;
+    font-weight: bold;
+    margin: 40px;
+    border-bottom: 3px solid;
 }

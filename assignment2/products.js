@@ -1,4 +1,5 @@
-const products = [
+import { addToBasket } from "./basket.js";
+export const products = [
     {
         id: 1,
         name: "Lumetra L50",
@@ -57,7 +58,7 @@ const products = [
         id: 7,
         name: "TerraCam Super",
         description: "Fantastiskt tålig actionkamera med de senaste funktionerna, videokvalitet på 8K 120FPS samt GPS funktion",
-        price: "6 900 KR",
+        price: 6900,
         image: "img/TerraCam.jpg",
         category: "Actionkamera"
     },
@@ -84,15 +85,20 @@ products.forEach(productcard => {
     <div class="procards">
     <img src="${productcard.image}" alt="">
     <h3>${productcard.name}</h3>
-    <p>Från ${productcard.price} KR</p>
+    <p>Från ${productcard.price} SEK</p>
     <p>Inkl. Moms</p>
     <div id="description">
         <p><strong>Produktbeskrivning</strong>: ${productcard.description}</p>
         <p><strong>Kategori</strong>: ${productcard.category}</p>
     </div>
-    <button id="button">Lägg i varukorg</button>
+    <button class="add-button">Lägg i varukorg</button>
     </div>
     `
 })
-
 productcards.innerHTML = productCardsHTML;
+
+const buttons = document.querySelectorAll(".add-button")
+
+buttons.forEach((button, index) => {
+    button.addEventListener("click", () => addToBasket(products[index]))
+});
