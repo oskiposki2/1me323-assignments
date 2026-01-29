@@ -80,10 +80,17 @@ let productCardsHTML = "";
 
 products.forEach(productcard => {
     productCardsHTML +=
-    `
+        `
     <div class="procards">
-    <h3>${productcard.name}</h3>
     <img src="${productcard.image}" alt="">
+    <h3>${productcard.name}</h3>
+    <p>Från ${productcard.price} KR</p>
+    <p>Inkl. Moms</p>
+    <div id="description">
+        <p><strong>Produktbeskrivning</strong>: ${productcard.description}</p>
+        <p><strong>Kategori</strong>: ${productcard.category}</p>
+    </div>
+    <button id="button">Lägg i varukorg</button>
     </div>
     `
 })
