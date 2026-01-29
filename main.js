@@ -3,6 +3,7 @@ import { createNavigation } from "./nav.js";
 
 const nav = document.getElementById("main-nav");
 const cards = document.getElementById("card-container");
+const productcards = document.getElementById("productcards")
 
 createNavigation(assignments, nav)
 
@@ -19,3 +20,5 @@ assignments.forEach(assignmentcard => {
 })
 
 cards.innerHTML = cardsHTML;
+
+console.log(productcards)
