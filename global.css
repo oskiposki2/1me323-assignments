@@ -122,3 +122,9 @@ ul li a:hover {
     width: 50%;
     margin-left: 4%;
 }
+
+.active {
+    background-color: lightblue;
+    padding: 25px;
+    color: black;
+}

@@ -1,12 +1,21 @@
 export function createNavigation(assignments, nav) {
+    const currentAssignment = document.body.id;
 
     let navHTML = "<ul>"
 
     assignments.forEach(assignment => {
+        let activeClass;
+        if (assignment.id === currentAssignment) {
+            activeClass = "active";
+        } else {
+            "";
+        }
+
         navHTML +=
             `
     <li>
-    <a href="${assignment.link}">${assignment.title}</a>
+    <a href="${assignment.link}" class="${activeClass}">
+            ${assignment.title}</a>
     </li>`
 
     })
