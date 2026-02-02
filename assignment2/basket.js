@@ -1,11 +1,14 @@
 const basketContainer = document.getElementById("basketList");
 const totalElement = document.getElementById("total");
-
 let basket = [];
+renderBasket();
 
 function renderBasket() {
     basketContainer.innerHTML = "";
     totalElement.innerHTML = "";
+        if (basket.length === 0){
+        basketContainer.innerHTML = `<p>Tomt i varukorgen</p>`;
+    }
 
     let total = 0;
 
