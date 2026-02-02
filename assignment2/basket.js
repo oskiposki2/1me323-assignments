@@ -1,6 +1,15 @@
+let basket = [];
+
+const savedBasket = localStorage.getItem("basket");
+if (savedBasket) {
+    basket = JSON.parse(savedBasket);
+}
+
 const basketContainer = document.getElementById("basketList");
 const totalElement = document.getElementById("total");
-let basket = [];
+const emptyBtn = document.getElementById("emptyBtn");
+const basketItem = document.getElementById("basketItem")
+
 renderBasket();
 
 function renderBasket() {
@@ -50,5 +59,19 @@ export function addToBasket(product) {
         })
     }
 
+    saveBasket();
     renderBasket();
+}
+
+emptyBtn.addEventListener("click", () => {
+    basketContainer.innerHTML = `<p>Tomt i varukorgen</p>`;
+
+    basket = [];
+    saveBasket();
+    renderBasket();
+
+})
+
+function saveBasket () {
+    localStorage.setItem("basket", JSON.stringify(basket));
 }
