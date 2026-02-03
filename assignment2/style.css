@@ -45,9 +45,18 @@ img {
     transition: 0.1s;
 }
 
+.disabledBtn {
+    border: 3px solid red;
+}
+
 .add-button:hover {
     color: green;
     border: none;
+}
+
+.disabledBtn:hover {
+    border: 3px solid red;
+    color: red;
 }
 
 #basket {
