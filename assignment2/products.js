@@ -1,4 +1,5 @@
-import { addToBasket } from "./basket.js";
+import { addToBasket } from "./basket.js"; // Importerar addToBasket för att kunna koppla den till lägg i kundvagns-knappen.
+
 export const products = [
     {
         id: 1,
@@ -77,10 +78,10 @@ export const products = [
 
 const productcards = document.getElementById("productcards");
 
-let productCardsHTML = "";
+let productCardsHTML = ""; // Skapar en varibel som vi sedan lägger HTML i.
 
 products.forEach(productcard => {
-    productCardsHTML +=
+    productCardsHTML += // Lägger till HTML:en nedan i variabeln.
         `
     <div class="procards">
     <img src="${productcard.image}" alt="">
@@ -95,10 +96,11 @@ products.forEach(productcard => {
     </div>
     `
 })
-productcards.innerHTML = productCardsHTML;
+productcards.innerHTML = productCardsHTML; // Skriver ut HTML:en.
 
-const buttons = document.querySelectorAll(".add-button")
+const buttons = document.querySelectorAll(".add-button") // Lägg i kundvagnsknapp
 
+// Funktion för att lägga en produkt i korgen med hjälp av index i arrayen med products-objekten. 
 buttons.forEach((button, index) => {
     button.addEventListener("click", () => addToBasket(products[index]))
 });
