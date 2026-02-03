@@ -100,3 +100,11 @@ img {
     background-color: darkgray;
     padding: 3px;
 }
+
+#returnlink2 {
+    color: black;
+}
+
+#returnlink2:hover {
+    text-decoration: none;
+}
