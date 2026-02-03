@@ -41,7 +41,7 @@ function renderBasket() {
 
     // Skriver ut totala kostnaden i HTML. 
     totalElement.innerHTML = `  
-    <p>Totalt: ${total} SEK</p>
+    <p><strong>Totalt</strong>: ${total} SEK</p>
     `
 
 }
