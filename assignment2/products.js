@@ -1,4 +1,9 @@
+import { assignments } from "../JS/assignments.js";
+import { createNavigation } from "../JS/nav.js";
 import { addToBasket } from "./basket.js"; // Importerar addToBasket för att kunna koppla den till lägg i kundvagns-knappen.
+
+const nav = document.getElementById("main-nav");
+createNavigation(assignments, nav, true)
 
 export const products = [
     {

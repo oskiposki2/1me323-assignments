@@ -1,5 +1,7 @@
-export function createNavigation(assignments, nav) {
+export function createNavigation(assignments, nav, isSubpage = false) {
     const currentAssignment = document.body.id;
+
+    let prefix = isSubpage ? "../" : "";
 
     let navHTML = "<ul>"
 
@@ -14,7 +16,7 @@ export function createNavigation(assignments, nav) {
         navHTML +=
             `
     <li>
-    <a href="${assignment.link}" class="${activeClass}">
+    <a href="${prefix}${assignment.link}" class="${activeClass}">
             ${assignment.title}</a>
     </li>`
 

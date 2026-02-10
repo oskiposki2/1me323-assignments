@@ -4,7 +4,7 @@ import { createNavigation } from "./nav.js";
 const nav = document.getElementById("main-nav");
 const cards = document.getElementById("card-container");
 
-createNavigation(assignments, nav)
+createNavigation(assignments, nav, false)
 
 let cardsHTML = "";
 
