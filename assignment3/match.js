@@ -49,12 +49,13 @@ export class Match {
         const c2Class = this.#winner === c2 ? "winner" : (this.#winner ? "loser" : "");
 
         this.#element.innerHTML = `
-        <div class="${c1Class}">
+        <div class="contenders ${c1Class}">
             <h3>${c1.name ?? "Okänd"}</h3>
             <p>Skill: ${c1.skillLevel ?? "N/A"}</p>
             <p>${c1.catchphrase ?? "Ingen catchphrase"}</p>
         </div>
-    <div class="${c2Class}">
+        <p class="vs">VS<p>
+    <div class="contenders ${c2Class}">
         <h3>${c2.name ?? "Unknown"}</h3>
         <p>Skill: ${c2.skillLevel ?? "N/A"}</p>
         <p>${c2.catchphrase ?? "No catchphrase"}</p>
