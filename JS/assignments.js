@@ -11,5 +11,12 @@ export const assignments = [
         title: "Uppgift 2 - Produktsida med kundvagn",
         link: "assignment2/index.html",
         description: "I denna uppgift ska du skapa en produktsida som dynamiskt renderar produkter från en datastruktur."
+    },
+
+    {
+        id: "assignment3",
+        title: "Uppgift 3 - Turneringsgeneratorn",
+        link: "assignment3/index.html",
+        description: "I denna uppgift ska du bygga en applikation för att visualisera slutspel i en turnering."
     }
 ]

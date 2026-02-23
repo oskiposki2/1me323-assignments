@@ -1,0 +1,13 @@
+.bracket {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;  /* Sträcker ut rundorna vertikalt */
+  gap: 2rem;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  /* Matcherna fördelas jämnt i det vertikala utrymmet */
+  gap: 1rem;
+}
