@@ -28,8 +28,8 @@ export class Match {
     }
 
     compete() {
-        const skillA = this.#contender1.skillLevel ?? 1;
-        const skillB = this.#contender2.skillLevel ?? 1;
+        const skillA = this.#contender1.skillLevel ?? 4;
+        const skillB = this.#contender2.skillLevel ?? 4;
         const chanceA = skillA / (skillA + skillB);
         const rand = Math.random();
         this.#winner = rand < chanceA ? this.#contender1 : this.#contender2;
@@ -52,13 +52,13 @@ export class Match {
         <div class="contenders ${c1Class}">
             <h3>${c1.name ?? "Okänd"}</h3>
             <p>Skill: ${c1.skillLevel ?? "N/A"}</p>
-            <p>${c1.catchphrase ?? "Ingen catchphrase"}</p>
+            <p>${c1.catchphrase ? `<i>"${c1.catchphrase}"</i>` : "Ingen catchphrase"}</p>
         </div>
         <p class="vs">VS<p>
     <div class="contenders ${c2Class}">
         <h3>${c2.name ?? "Unknown"}</h3>
         <p>Skill: ${c2.skillLevel ?? "N/A"}</p>
-        <p>${c2.catchphrase ?? "No catchphrase"}</p>
+        <p>${c2.catchphrase ? `<i>"${c2.catchphrase}"</i>` : "Ingen catchphrase :("}</p>
     </div>
         `;
 
