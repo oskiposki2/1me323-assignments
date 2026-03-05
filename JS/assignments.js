@@ -18,5 +18,12 @@ export const assignments = [
         title: "Uppgift 3 - Turneringsgeneratorn",
         link: "assignment3/index.html",
         description: "I denna uppgift ska du bygga en applikation för att visualisera slutspel i en turnering."
+    },
+
+    {
+        id: "assignment4",
+        title: "Uppgift 4 - Spökhusbyrån",
+        link: "assignment4/index.html",
+        description: "I denna uppgift ska du bygga en webbplats åt det fiktiva företaget Spökhusbyrån AB"
     }
 ]

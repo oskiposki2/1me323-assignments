@@ -13,13 +13,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;  /* Matcherna fördelas jämnt i det vertikala utrymmet */
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   margin-bottom: 100px;
 }
 
 .match {
-    border: solid;
     text-align: center;
     border-radius: 25px;
     background-color: rgba(128, 128, 128, 0.2);
@@ -27,6 +26,7 @@ body {
     width: 400px;
     margin-left: 20px;
     position: relative;
+    box-shadow: 4px 0px 12px 2px;
 }
 
 .contenders {
@@ -53,7 +53,7 @@ body {
 }
 
 .simulate-btn {
-    background-color: lightskyblue;
+    background-color: rgb(253, 76, 76);
     padding: 15px;
     font-size: 1.2em;
     border-radius: 20px;

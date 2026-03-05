@@ -30,6 +30,8 @@ export async function initTournament() {
     currentMatches = createRound(contenders, "Kvartsfinal");
 }
 
+// -----------------------------------------------
+
 function createRound(contenders, roundName) {
 
     let bracket = document.querySelector(".bracket");
@@ -56,22 +58,27 @@ function createRound(contenders, roundName) {
     }
 
     bracket.appendChild(round1);
+    
     simulateBtn.textContent = `Simulera ${roundName}`;
 
     return matches;
 }
 
+// -----------------------------------------------
+
 function restartTournament() {
     document.querySelector(".bracket").innerHTML = "";
-    
+
     currentMatches = createRound(contenders, "Kvartsfinal");
 
     simulateBtn.style.display = "block";
 }
 
+// -----------------------------------------------
+
 function simulateRound() {
     const latestHeading = document.querySelector(".round:last-child h2");
-    latestHeading?.classList.add("wow");
+    latestHeading.classList.add("wow");
 
     currentMatches.forEach(match => {
         if (!match.isPlayed) {
