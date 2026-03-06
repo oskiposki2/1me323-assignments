@@ -1,4 +1,9 @@
 import { loadHouses } from "./utilities.js";
+import { headerDisplay } from "./utilities.js"
+import { footerDisplay } from "./utilities.js";
+
+footerDisplay();
+headerDisplay();
 
 const houseCardContainer = document.getElementById("housecards");
 let houses = [];
@@ -51,6 +56,10 @@ function displayHouses(housesToShow) {
         bookingBtn = document.createElement("button");
         bookingBtn.textContent = "Läs mer och boka";
         bookingBtn.classList.add("booking-btn")
+
+        bookingBtn.addEventListener("click", () => {
+            window.location.href = `house.html?id=${house.id}`;
+        })
 
 
         houseDiv.append(bookingBtn)

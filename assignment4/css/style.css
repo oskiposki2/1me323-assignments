@@ -1,7 +1,7 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, rgb(108, 5, 5) 1%, rgb(0, 0, 0) 10%);
+    background: linear-gradient(to bottom, rgb(108, 5, 5) 1%, rgb(0, 0, 0) 30%);
     min-height: 100vh;
 }
 
@@ -63,12 +63,57 @@ header h3 {
     width: 300px;
 }
 
+.backLink {
+    margin-left: 50px;
+    font-size: 1.5em;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.backLink:hover {
+    color: red;
+}
+
 .message {
     color: white;
     font-size: 2.5em;
 }
 
+.houseNotFound {
+    color: white;
+    font-size: 3em;
+}
+
 #form3 form {
     margin-top: 60px;
     color: white;
+}
+
+#houseContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.houseDisplay {
+    color: white;
+}
+
+.houseDisplay img {
+    border-radius: 10px;
+    border: 2px solid rgb(78, 17, 17);
+}
+
+.ghostlist {
+    color: white;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to top, rgb(108, 5, 5) 20%, rgb(0, 0, 0) 100%);
 }
