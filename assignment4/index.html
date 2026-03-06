@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,41 @@
     <script type="module" src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>SPÖKHUSBYRÅN</h1>
+        <div>
+            <h1>SPÖKHUSBYRÅN</h1>
+            <h3>Världens läskigaste resebyrå</h3>
+        </div>
     </header>
-    
+    <section id="forms">
+        <div id="form1">
+            <form>
+                <label for="price">Prisintervall: <span id="price-value">Inget valt</span></label>
+                <input type="range" id="price" min="0" max="3000" value="0">
+
+                <label for="horrorLevel">Lägsta skräcknivå: <span id="horror-value">Inget valt</span></label>
+                <input type="range" id="horrorLevel" min="0" max="5" value="0">
+            </form>
+        </div>
+        <div id="form2">
+            <form>
+                <label for="ghostType">Typ av spöke: </label>
+                <select id="ghostType">
+                </select>
+            </form>
+        </div>
+        <div id="form3">
+            <form>
+                <label for="wifi">WiFi-krav</label>
+                <input type="checkbox" name="wifi" id="wifi">
+            </form>
+        </div>
+    </section>
+
+    <section id="housecards">
+    </section>
 </body>
+
 </html>
