@@ -1,9 +1,12 @@
 import { loadHouses } from "./utilities.js";
 import { headerDisplay } from "./utilities.js";
 import { footerDisplay } from "./utilities.js";
+import { initBooking } from "./booking.js";
+
 
 footerDisplay();
 headerDisplay();
+initBooking();
 
 const houseContainer = document.getElementById("houseContainer");
 

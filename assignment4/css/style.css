@@ -117,3 +117,35 @@ footer {
     padding: 50px;
     background: linear-gradient(to top, rgb(108, 5, 5) 20%, rgb(0, 0, 0) 100%);
 }
+
+#booking {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-left: 100px;
+}
+
+#bookingForm {
+    color: white;
+    justify-self: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    /* display: flex;
+    flex-direction: column; */
+    padding: 20px;
+}
+
+input[type="checkbox"] {
+  display: inline;
+  width: auto;
+}
+
+#currentBooking {
+    color: white;
+    margin-top: 100px;
+    width: 400px;
+}

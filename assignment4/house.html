@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,52 @@
     <script type="module" src="js/house.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-        
+
     </header>
     <a href="index.html" class="backLink">TILLBAKA</a>
     <section id="houseContainer">
 
     </section>
+    <section id="booking">
+        <form id="bookingForm">
+            <h3>Bokningsformulär</h3>
+            <fieldset>
+                <legend>Antal dagar</legend>
+
+                <label for="checkIn">Incheckningsdatum:</label>
+                <input type="date" name="checkIn" id="checkIn">
+
+                <label for="numberOfDays">Antal nätter:</label>
+                <input type="number" name="numberOfDays" id="numberOfDays" min="1" value="1">
+            </fieldset>
+            <fieldset>
+                <legend>Tillägg</legend>
+
+                <label for="breakfast">Frukost 150 kr/dag</label>
+                <input type="checkbox" name="breakfast" id="breakfast" value="150">
+
+                <label for="ghostTours">Spökvandring 300kr</label>
+                <input type="checkbox" name="ghostTours" id="ghostTours" value="300">
+
+                <label for="chargingPole">Laddstolpe 200kr</label>
+                <input type="checkbox" name="chargingPole" id="chargingPole" value="200">
+            </fieldset>
+            <fieldset>
+                <legend>Rabattkod</legend>
+
+                <input type="text" name="discountCode" id="discountCode" placeholder="Ev. rabattkod här">
+            </fieldset>
+            <button type="submit" id="bookingBtn">Boka</button>
+        </form>
+        <div id="currentBooking">
+            <h3>Aktuell bokning:</h3>
+        </div>
+    </section>
     <footer>
-        
     </footer>
 </body>
+
 </html>
