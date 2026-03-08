@@ -1,12 +1,9 @@
-import { loadHouses } from "./utilities.js";
-import { headerDisplay } from "./utilities.js";
-import { footerDisplay } from "./utilities.js";
-import { initBooking } from "./booking.js";
+import { loadHouses, headerDisplay, footerDisplay } from "./utilities.js";
+import { Booking } from "./booking.js";
 
 
 footerDisplay();
 headerDisplay();
-initBooking();
 
 const houseContainer = document.getElementById("houseContainer");
 
@@ -24,6 +21,10 @@ const params = new URLSearchParams(window.location.search);
 const houseId = params.get("id");
 
 const house = houses.find(h => h.id == houseId);
+
+const booking = new Booking(house);
+booking.attachListeners();
+booking.updateDisplay();
 
 if (!house) {
     const msg = document.createElement("p")

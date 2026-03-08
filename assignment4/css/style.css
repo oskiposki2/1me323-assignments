@@ -28,7 +28,7 @@ header h3 {
 .house-div {
     color: white;
     flex: 0 0 400px;
-    border: 2px solid rgb(78, 17, 17);
+    border: 1px solid rgb(78, 17, 17);
     border-radius: 10px;
     padding: 20px;
 }
@@ -47,7 +47,15 @@ header h3 {
 }
 
 .booking-btn {
-    color: red;
+    padding: 10px;
+    background-color: #b30000;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.15em;
+}
+
+.booking-btn:hover {
+    color: white;
 }
 
 #forms {
@@ -115,7 +123,6 @@ footer {
     color: white;
     text-align: center;
     padding: 50px;
-    background: linear-gradient(to top, rgb(108, 5, 5) 20%, rgb(0, 0, 0) 100%);
 }
 
 #booking {
@@ -131,11 +138,10 @@ footer {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 fieldset {
-    /* display: flex;
-    flex-direction: column; */
     padding: 20px;
 }
 
@@ -148,4 +154,47 @@ input[type="checkbox"] {
     color: white;
     margin-top: 100px;
     width: 400px;
+}
+
+.confirmationDiv {
+    justify-self: center;
+    width: 800px;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgba(152, 255, 152, 0.247);
+    padding: 1px;
+    border-radius: 20px;
+}
+
+.confirmationDiv h2 {
+    font-size: 2.5em;
+}
+
+.validateBox {
+    background: #ffe5e5;
+    border: 1px solid #ff6b6b;
+    color: #b30000;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: none;
+    width: 300px;
+    margin-left: 600px;
+}
+
+.validateBox.show {
+    display: block;
+}
+
+#bookingBtn {
+    background-color: red;
+    font-size: 1.5em;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#bookingBtn:hover {
+    color: white;
 }

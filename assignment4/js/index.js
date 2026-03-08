@@ -1,9 +1,7 @@
-import { loadHouses } from "./utilities.js";
-import { headerDisplay } from "./utilities.js"
-import { footerDisplay } from "./utilities.js";
+import { footerDisplay, loadHouses, headerDisplay } from "./utilities.js";
 
-footerDisplay();
 headerDisplay();
+footerDisplay();
 
 const houseCardContainer = document.getElementById("housecards");
 let houses = [];
