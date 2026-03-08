@@ -1,4 +1,4 @@
-import { footerDisplay, loadHouses, headerDisplay } from "./utilities.js";
+import { footerDisplay, loadHouses, headerDisplay, scareLevels } from "./utilities.js";
 
 headerDisplay();
 footerDisplay();
@@ -15,14 +15,6 @@ const priceSlider = document.querySelector("#price");
 const priceInput = document.querySelector("#price-value");
 const ghostTypeSelecet = document.querySelector("#ghostType")
 const wifiRequierement = document.querySelector("#wifi");
-
-const scareLevels = {
-    1: "Mysigt",
-    2: "Lite läskigt",
-    3: "Obehagligt",
-    4: "Skräckinjagande",
-    5: "Ren terror"
-}
 
 displayHouses(houses)
 

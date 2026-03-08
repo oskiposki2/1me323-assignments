@@ -1,37 +1,24 @@
 import { loadHouses, headerDisplay, footerDisplay } from "./utilities.js";
 import { Booking } from "./booking.js";
-
+import { weatherDisplay } from "./weatherAPI.js";
+import { scareLevels } from "./utilities.js";
 
 footerDisplay();
 headerDisplay();
 
 const houseContainer = document.getElementById("houseContainer");
+const weatherDiv = document.querySelector("#weatherDiv");
 
 let houses = await loadHouses();
-
-const scareLevels = {
-    1: "Mysigt",
-    2: "Lite läskigt",
-    3: "Obehagligt",
-    4: "Skräckinjagande",
-    5: "Ren terror"
-}
-
 const params = new URLSearchParams(window.location.search);
 const houseId = params.get("id");
-
 const house = houses.find(h => h.id == houseId);
 
 const booking = new Booking(house);
 booking.attachListeners();
 booking.updateDisplay();
 
-if (!house) {
-    const msg = document.createElement("p")
-    msg.classList.add("houseNotFound")
-    msg.textContent = "Huset kunde inte hittas"
-    houseContainer.append(msg)
-} else {
+try {
     let houseDiv = document.createElement("div");
     houseDiv.classList.add("houseDisplay");
 
@@ -58,4 +45,23 @@ if (!house) {
     }
     houseContainer.append(houseDiv)
     houseDiv.append(ghostUl)
+} catch (error) {
+    const msg = document.createElement("p")
+    msg.classList.add("houseNotFound")
+    msg.textContent = "Huset kunde inte hittas"
+    houseContainer.append(msg)
 }
+
+async function showWeather() {
+
+    const weather = await weatherDisplay(house.coordinates.lat, house.coordinates.lng)
+
+    weatherDiv.innerHTML = `
+    <h3>Akutellt väder vid ${house.name}</h3>
+    <p>Temperatur: ${weather.current_weather.temperature} °C</p>
+    <p>Upplevd temperatur: ${weather.hourly.apparent_temperature[0]} °C</p>
+    <p>Molntäckning: ${weather.hourly.cloud_cover[0]}%</p>
+`
+}
+
+showWeather(house)

@@ -22,3 +22,11 @@ export function footerDisplay() {
     <h3>Spökhusbyrån AB - Världens läskigaste hus!</h3>
     `
 }
+
+export const scareLevels = {
+    1: "Mysigt",
+    2: "Lite läskigt",
+    3: "Obehagligt",
+    4: "Skräckinjagande",
+    5: "Ren terror"
+}

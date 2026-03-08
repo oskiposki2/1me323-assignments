@@ -117,6 +117,7 @@ header h3 {
 
 .ghostlist {
     color: white;
+    text-transform: capitalize;
 }
 
 footer {
@@ -146,8 +147,8 @@ fieldset {
 }
 
 input[type="checkbox"] {
-  display: inline;
-  width: auto;
+    display: inline;
+    width: auto;
 }
 
 #currentBooking {
@@ -196,5 +197,19 @@ input[type="checkbox"] {
 }
 
 #bookingBtn:hover {
+    color: white;
+}
+
+#weatherDiv {
+    color: white;
+    margin-right: 200px;
+    border-radius: 10px;
+    border: 2px solid rgb(78, 17, 17);
+    justify-items: center;
+    justify-self: end;
+    padding: 20px;
+}
+
+#errorMsg {
     color: white;
 }
