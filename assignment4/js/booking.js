@@ -106,7 +106,7 @@ export class Booking {
         <p><b>${this.house.name}</b><p>
         <p>Incheckning: ${this.checkInInput.value}<p>
         <p>Antal nätter: ${this.numberOfDaysInput.value}</p>
-        <p>Tillägg: 
+        <p>Tillägg:
         ${!this.breakfast ? `` : `(Frukost)`}
         ${!this.ghostTour ? `` : `(Spökvandring)`} 
         ${!this.chargingPole ? `` : `(Laddstolpe)`}

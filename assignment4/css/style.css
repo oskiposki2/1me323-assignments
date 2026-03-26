@@ -205,24 +205,25 @@ input[type="checkbox"] {
 }
 
 #bookingBtn {
-    background-color: red;
+    background-color: rgb(167, 30, 30);
     font-size: 1.5em;
     border-radius: 20px;
     padding: 10px;
     cursor: pointer;
+    color: white;
 }
 
 #bookingBtn:hover {
-    color: white;
+    color: black;
 }
 
-#weatherDiv {
+.weatherDiv {
     color: white;
-    margin-left: 250px;
-    border-radius: 10px;
     border: 2px solid rgb(78, 17, 17);
-    justify-self: start;
-    padding: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 25%;
+    text-align: center;
 }
 
 #errorMsg {

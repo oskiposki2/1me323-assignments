@@ -7,7 +7,8 @@ footerDisplay();
 headerDisplay();
 
 const houseContainer = document.getElementById("houseContainer");
-const weatherDiv = document.querySelector("#weatherDiv");
+const weatherDiv = document.createElement("div")
+weatherDiv.classList.add("weatherDiv")
 
 let houses = await loadHouses();
 
@@ -57,8 +58,10 @@ if (!houses) {
     const weather = await weatherDisplay(house.coordinates.lat, house.coordinates.lng)
 
     weatherDiv.innerHTML = `
-    <h3>Akutell temperatur vid ${house.name}</h3>
+    <h3>AKUTELL TEMPERATUR</h3>
     <p class="temp">${weather.current_weather.temperature} °C</p>
     
 `
+
+houseDiv.appendChild(weatherDiv)
 }
