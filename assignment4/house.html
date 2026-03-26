@@ -13,7 +13,8 @@
     <header>
 
     </header>
-    <a href="index.html" class="backLink">TILLBAKA</a>
+    <div id="heading"></div>
+    <a href="index.html" class="backLink">Tillbaka till startsidan</a>
     <section id="houseContainer">
 
     </section>
@@ -27,21 +28,26 @@
 
                 <label for="checkIn">Incheckningsdatum:</label>
                 <input type="date" name="checkIn" id="checkIn">
-
+                
                 <label for="numberOfDays">Antal nätter:</label>
                 <input type="number" name="numberOfDays" id="numberOfDays" min="1" value="1">
             </fieldset>
             <fieldset>
                 <legend>Tillägg</legend>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="breakfast" id="breakfast" value="150">
+                    <label for="breakfast">Frukost 150 kr/dag</label>
+                </div>
 
-                <label for="breakfast">Frukost 150 kr/dag</label>
-                <input type="checkbox" name="breakfast" id="breakfast" value="150">
+                <div class="checkbox-item">
+                    <input type="checkbox" name="ghostTours" id="ghostTours" value="300">
+                    <label for="ghostTours">Spökvandring 300kr</label>
+                </div>
 
-                <label for="ghostTours">Spökvandring 300kr</label>
-                <input type="checkbox" name="ghostTours" id="ghostTours" value="300">
-
-                <label for="chargingPole">Laddstolpe 200kr</label>
-                <input type="checkbox" name="chargingPole" id="chargingPole" value="200">
+                <div class="checkbox-item">
+                    <input type="checkbox" name="chargingPole" id="chargingPole" value="200">
+                    <label for="chargingPole">Laddstolpe 200kr</label>
+                </div>
             </fieldset>
             <fieldset>
                 <legend>Rabattkod</legend>

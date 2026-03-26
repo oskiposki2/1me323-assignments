@@ -23,38 +23,43 @@ function displayHouses(housesToShow) {
 
     houseCardContainer.innerHTML = "";
 
-    if (housesToShow.length === 0) {
-        const msg = document.createElement("p");
-        msg.classList.add("message");
-        msg.textContent = "Tyvärr finns inga träffar för denna sökning";
+    if (!houses) {
+        houseCardContainer.innerHTML = `<p class="errorMsg">Kunde inte hämta Spökhus</p>`;
+    } else {
+        if (housesToShow.length === 0) {
+            const msg = document.createElement("p");
+            msg.classList.add("message");
+            msg.textContent = "Tyvärr finns inga träffar för denna sökning";
 
-        houseCardContainer.append(msg)
-    }
+            houseCardContainer.append(msg)
+        }
 
-    for (const house of housesToShow) {
-        const houseDiv = document.createElement("div");
+        for (const house of housesToShow) {
+            const houseDiv = document.createElement("div");
 
-        houseDiv.classList.add("house-div")
+            houseDiv.classList.add("house-div")
 
-        houseDiv.innerHTML = `
+            houseDiv.innerHTML = `
     <img src="./img/${house.image}">
     <h3>${house.name}</h3>
     <p>Plats: ${house.location}</p>
     <p>Pris: ${house.pricePerNight} KR/natt</p>
     <p>Skräcknivå: ${scareLevels[house.scareLevel]}</p>
     `
-        bookingBtn = document.createElement("button");
-        bookingBtn.textContent = "Läs mer och boka";
-        bookingBtn.classList.add("booking-btn")
+            bookingBtn = document.createElement("button");
+            bookingBtn.textContent = "Läs mer och boka";
+            bookingBtn.classList.add("booking-btn")
 
-        bookingBtn.addEventListener("click", () => {
-            window.location.href = `house.html?id=${house.id}`;
-        })
+            bookingBtn.addEventListener("click", () => {
+                window.location.href = `house.html?id=${house.id}`;
+            })
 
 
-        houseDiv.append(bookingBtn)
-        houseCardContainer.append(houseDiv)
+            houseDiv.append(bookingBtn)
+            houseCardContainer.append(houseDiv)
+        }
     }
+
 }
 //-----------------------------------------------------
 

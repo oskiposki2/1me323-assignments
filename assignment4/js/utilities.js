@@ -1,23 +1,28 @@
 export async function loadHouses() {
-    const response = await fetch("data/houses.json");
-    const houses = await response.json();
+    try {
+        const response = await fetch("data/houses.json");
+        if (!response.ok) throw new Error("Kunde inte hämta Spökhus")
+        const houses = await response.json();
 
-    return houses;
+        return houses;
+    } catch (error) {
+        console.error(error)
+    }
 }
 
 export function headerDisplay() {
-    let header = document.querySelector("header")
+    let header = document.querySelector("#heading")
     const headerDiv = document.createElement("div");
+    headerDiv.classList.add("ghostHeader")
     headerDiv.innerHTML = `
     <h1>SPÖKHUSBYRÅN</h1>
-    <h3>Världens läskigaste resebyrå</h3>
 `
-header.append(headerDiv)
+    header.append(headerDiv)
 }
 
 export function footerDisplay() {
     let footer = document.querySelector("footer");
-    
+
     footer.innerHTML = `
     <h3>Spökhusbyrån AB - Världens läskigaste hus!</h3>
     `

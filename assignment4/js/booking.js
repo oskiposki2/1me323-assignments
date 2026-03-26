@@ -48,7 +48,6 @@ export class Booking {
     }
 
     validate() {
-        console.log("VALIDATE KÖRS", this.checkInInput.value);
 
         this.validateBox.classList.add("validateBox");
 
@@ -104,14 +103,15 @@ export class Booking {
         this.bookingConfirmationDiv.classList.add("confirmationDiv")
 
         this.bookingConfirmationDiv.innerHTML = `<h2>Bokning bekräftad!</h2>
-        <p>${this.house.name}<p>
-        <p>Datum: ${this.checkInInput.value}<p>
+        <p><b>${this.house.name}</b><p>
+        <p>Incheckning: ${this.checkInInput.value}<p>
         <p>Antal nätter: ${this.numberOfDaysInput.value}</p>
         <p>Tillägg: 
         ${!this.breakfast ? `` : `(Frukost)`}
         ${!this.ghostTour ? `` : `(Spökvandring)`} 
         ${!this.chargingPole ? `` : `(Laddstolpe)`}
         </p>
+        <p>${!this.discountcode == "" ? `Kampanjkod: GHOST20 (20%)` : ``}
         <p>TOTAL KOSTNAD: ${total} KR</p>
         <p><strong>Varmt välkommen till ${this.house.name}</strong></p>
         `

@@ -1,7 +1,7 @@
-import { loadHouses, headerDisplay, footerDisplay } from "./utilities.js";
+import { loadHouses, headerDisplay, footerDisplay, scareLevels } from "./utilities.js";
 import { Booking } from "./booking.js";
 import { weatherDisplay } from "./weatherAPI.js";
-import { scareLevels } from "./utilities.js";
+
 
 footerDisplay();
 headerDisplay();
@@ -10,17 +10,21 @@ const houseContainer = document.getElementById("houseContainer");
 const weatherDiv = document.querySelector("#weatherDiv");
 
 let houses = await loadHouses();
-const params = new URLSearchParams(window.location.search);
-const houseId = params.get("id");
-const house = houses.find(h => h.id == houseId);
 
-const booking = new Booking(house);
-booking.attachListeners();
-booking.updateDisplay();
+let houseDiv = document.createElement("div");
+houseDiv.classList.add("houseDisplay");
 
-try {
-    let houseDiv = document.createElement("div");
-    houseDiv.classList.add("houseDisplay");
+if (!houses) {
+    houseContainer.innerHTML = `<p class="errorMsg">Kunde inte hämta Spökhus</p>`;
+} else {
+
+    const params = new URLSearchParams(window.location.search);
+    const houseId = params.get("id");
+    const house = houses.find(h => h.id == houseId);
+
+    if (!house) {
+        houseContainer.innerHTML = `<p class="errorMsg">Kunde inte hitta det spökhuset du letar efter!</p>`;
+    } 
 
     houseDiv.innerHTML = `
 <img src="./img/${house.image}">
@@ -45,23 +49,16 @@ try {
     }
     houseContainer.append(houseDiv)
     houseDiv.append(ghostUl)
-} catch (error) {
-    const msg = document.createElement("p")
-    msg.classList.add("houseNotFound")
-    msg.textContent = "Huset kunde inte hittas"
-    houseContainer.append(msg)
-}
 
-async function showWeather() {
+    const booking = new Booking(house);
+    booking.attachListeners();
+    booking.updateDisplay();
 
     const weather = await weatherDisplay(house.coordinates.lat, house.coordinates.lng)
 
     weatherDiv.innerHTML = `
-    <h3>Akutellt väder vid ${house.name}</h3>
-    <p>Temperatur: ${weather.current_weather.temperature} °C</p>
-    <p>Upplevd temperatur: ${weather.hourly.apparent_temperature[0]} °C</p>
-    <p>Molntäckning: ${weather.hourly.cloud_cover[0]}%</p>
+    <h3>Akutell temperatur vid ${house.name}</h3>
+    <p class="temp">${weather.current_weather.temperature} °C</p>
+    
 `
 }
-
-showWeather(house)
